@@ -1,0 +1,22 @@
+n = int(input("Enter Array Size: "))
+arr = []
+print("Enter Array Elements:")
+for i in range(n):
+    arr.append(int(input()))
+print("\nOriginal Array:", arr)
+
+ele = int(input("\nEnter new element to insert: "))
+pos = int(input("\nEnter the position to insert: "))
+arr.insert(pos, ele)
+n += 1
+print("\nArray after Insertion: \n", arr)
+
+mod = int(input("\nEnter the position to modify: "))
+m_ele = int(input("\nEnter modified element: "))
+arr[mod] = m_ele
+print("\nArray after Modification : ", arr)
+
+del_pos = int(input("\nEnter the position to delete: "))
+arr.pop(del_pos)
+n -= 1
+print("\nArray after Deletion : \n", arr)
