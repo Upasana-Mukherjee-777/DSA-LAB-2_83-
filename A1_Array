@@ -1,0 +1,48 @@
+#include <stdio.h>
+int main() {
+int n, i, ele, pos, mod, m_ele, del;
+    printf("Enter Array Size: ");
+    scanf("%d", &n);
+    int arr[n];
+    printf("Enter Array Elements: ");
+    for (i = 0; i < n; i++){
+        scanf("%d", &arr[i]);
+    }
+    printf("\nOriginal Array: ");
+    for (i = 0; i < n; i++){
+        printf("%d ", arr[i]);
+    }
+    printf("\nEnter new element to insert: ");
+    scanf("%d", &ele);
+    printf("\nEnter the position to insert: ");
+    scanf("%d", &pos);
+    for (i = n; i > pos; i--) {
+    arr[i] = arr[i - 1];
+        }
+    arr[pos] = ele;
+    n++;
+    printf("\nArray after Insertion: ");
+    for (i = 0; i < n; i++){
+        printf("%d ", arr[i]);
+    }
+    printf("\nEnter the position to modify: ");
+    scanf("%d", &mod);
+    printf("\nEnter modified element: ");
+    scanf("%d", &m_ele);
+    arr[mod] = m_ele;
+    printf("\nArray after Modification : ");
+    for (i = 0; i < n; i++){
+        printf("%d ", arr[i]);
+    }
+    printf("\nEnter the position to delete: ");
+    scanf("%d", &del);
+    for (i = del; i < n-1; i++){
+         arr[i] = arr[i + 1];
+    }
+    n--;
+    printf("\nArray after Deletion : ");
+    for (i = 0; i < n; i++){
+        printf("%d ", arr[i]);
+    }
+    return 0;
+}
