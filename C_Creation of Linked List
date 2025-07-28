@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    int data;
+    struct Node* next;
+};
+
+int main() {
+    struct Node *head = NULL, *p;
+    int n, i, data;
+
+    printf("Number of nodes: ");
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++) {
+        printf("Enter data for node %d: ", i + 1);
+        scanf("%d", &data);
+
+        struct Node* newNode = malloc(sizeof(struct Node));
+        if (newNode == NULL) {
+            printf("Memory allocation failed\n");
+            return 1;
+        }
+        newNode->data = data;
+        newNode->next = NULL;
+
+        if (head == NULL) {
+            head = newNode;  
+            p = head;
+        } else {
+            p->next = newNode; 
+            p = newNode;       
+        }
+    }
+
+    p = head;
+    while (p != NULL) {
+        printf("%d -> ", p->data);
+        p = p->next;
+    }
+    printf("NULL\n");
+
+    p = head;
+    while (p != NULL) {
+        struct Node* temp = p;
+        p = p->next;
+        free(temp);
+    }
+
+    return 0;
+}
